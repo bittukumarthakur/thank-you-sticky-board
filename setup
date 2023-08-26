@@ -1,0 +1,18 @@
+
+#! /bin/bash
+
+echo "instializing npm..."
+npm init -y
+
+echo "installing eslint..."
+npm install --save-dev eslint
+
+echo "installing nyc..."
+npm install --save-dev nyc
+
+echo "installing supertest..."
+npm install --save-dev supertest
+
+echo "configuring git hooks..."
+cp ./bin/pre-commit .git/hooks
+

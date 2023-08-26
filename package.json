@@ -1,0 +1,22 @@
+{
+  "name": "thank-you-sticky-board",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node --test",
+    "lint": "npx eslint",
+    "coverage": "npx nyc node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "nyc": "^15.1.0",
+    "supertest": "^6.3.3"
+  }
+}
