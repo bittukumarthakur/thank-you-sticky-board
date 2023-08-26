@@ -4,6 +4,3 @@
 
 ## sign-up
 - user have to create a account;
-
-
-
