@@ -18,3 +18,7 @@ h2 {
   border: 1px solid black;
   line-height: 2em;
 }
+
+a {
+  text-decoration: none;
+}
