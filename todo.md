@@ -23,3 +23,17 @@ if it does not have redirect to login page;
 - 4: if not set the token;
 - 5: then it can view the post;
 - 6: 
+
+## model sticky-notes;
+
+stickyNotes.add(username,message);
+stickyNotes.remove(username,message);
+
+=> [
+  {userName: "bittu",
+  note: "thank you for your support and help raj"
+  },
+  {userName: "raj",
+  note: "thank you for your support and help bittu"
+  }
+]
