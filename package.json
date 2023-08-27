@@ -6,6 +6,7 @@
     "test": "test"
   },
   "scripts": {
+    "start": "node server.js",
     "test": "node --test",
     "lint": "npx eslint",
     "coverage": "npx nyc node --test"
