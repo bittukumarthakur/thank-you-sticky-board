@@ -3,15 +3,15 @@ const { it, describe } = require("node:test");
 const request = require("supertest");
 const { createApp } = require("../../src/app/create-app");
 const Authenticate = require("../../src/models/authenticate");
-const { authUser } = require("../../src/middleware/auth-user");
-const { parseCookie } = require("../../src/middleware/parseCookie");
+const Board = require("../../src/models/board");
 
 describe("app", () => {
 
   describe("GET /login", () => {
     it("should serve the login page", (_, done) => {
       const auth = new Authenticate();
-      const app = createApp(auth, authUser, parseCookie);
+      const board = new Board();
+      const app = createApp(auth, board);
 
       request(app)
         .get("/login")
@@ -24,7 +24,8 @@ describe("app", () => {
   describe("POST /login", () => {
     it("should post the login details, redirect to home-page", (_, done) => {
       const auth = new Authenticate();
-      const app = createApp(auth, authUser, parseCookie);
+      const board = new Board();
+      const app = createApp(auth, board);
 
       request(app)
         .post("/login")
@@ -41,7 +42,8 @@ describe("app", () => {
   describe("GET /", () => {
     it("should serve home page to logged_in user", (_, done) => {
       const auth = new Authenticate();
-      const app = createApp(auth, authUser, parseCookie);
+      const board = new Board();
+      const app = createApp(auth, board);
 
       request(app)
         .post("/login")
@@ -62,7 +64,8 @@ describe("app", () => {
   describe("GET /logout", () => {
     it("should logout the user", (_, done) => {
       const auth = new Authenticate();
-      const app = createApp(auth, authUser, parseCookie);
+      const board = new Board();
+      const app = createApp(auth, board);
 
       request(app)
         .post("/login")
@@ -80,7 +83,5 @@ describe("app", () => {
         });
     });
   });
-
-
 
 });

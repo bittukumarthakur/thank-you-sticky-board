@@ -6,24 +6,10 @@ const { serveHomepage } = require("../handlers/serve-home-page");
 const { logout } = require("../handlers/logout");
 const { authUser } = require("../middleware/auth-user");
 const { parseCookie } = require("../middleware/parseCookie");
+const { postNote } = require("../handlers/post-note");
 
-const Board = require("../models/board");
-
-
-const postNote = (request, response) => {
-  const { board, auth } = request.app.context;
-  const { message } = request.body;
-
-  const authToken = request.cookie["auth-token"];
-  const userName = auth.getUserInfo(authToken);
-
-  board.addNote(userName, message);
-  response.redirect("/");
-};
-
-const createApp = (auth) => {
+const createApp = (auth, board) => {
   const app = express();
-  const board = new Board();
   app.context = { auth, board };
 
   app.use(logger);
