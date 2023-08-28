@@ -43,3 +43,9 @@ stickyNotes.remove(username,message);
 - make the size of note small.
 - add note is two word.
 
+## need to fix
+- login => log in /log-in
+- implement sign-in;
+- add like button;
+- work on ui; 
+

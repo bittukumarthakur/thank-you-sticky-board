@@ -3,5 +3,8 @@
   "reporter": [
     "html"
   ],
-  "check-coverage": false
+  "check-coverage": false,
+  "include": [
+    "src/*"
+  ]
 }

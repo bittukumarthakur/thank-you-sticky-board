@@ -1,5 +1,4 @@
 const { createApp } = require("./src/app/create-app");
-const { parseCookie } = require("./src/middleware/parseCookie");
 const Authenticate = require("./src/models/authenticate");
 const Board = require("./src/models/board");
 const PORT = 8000;

@@ -3,8 +3,8 @@ const { readFile } = require("node:fs");
 const createNotesElement = (notesDetails) => {
   return notesDetails.map(({ username, message }) => {
     return `<div class="note">
-     <h2 class="name">${username}</h2>
-     <div class="message"><p>${message}</p></div>
+    <div class="message"><p>${message}</p></div>
+    <h2 class="name">By: ${username}</h2>
     </div>`;
   }).join("\n");
 };

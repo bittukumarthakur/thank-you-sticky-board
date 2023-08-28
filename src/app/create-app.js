@@ -20,7 +20,7 @@ const createApp = (auth, board) => {
   app.post("/login", login);
   app.get("/logout", logout);
   app.get("/", authUser, serveHomepage);
-  app.post("/", authUser, postNote);
+  app.post("/notes", authUser, postNote);
 
   app.use(express.static("public"));
   return app;

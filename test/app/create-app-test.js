@@ -72,6 +72,7 @@ describe("app", () => {
         .type("application/x-www-form-urlencoded")
         .send("username=bittu&password=123")
         .expect("set-cookie", "auth-token=bittu-123; Path=/")
+        .expect(200)
         .end(() => {
           request(app)
             .get("/logout")
