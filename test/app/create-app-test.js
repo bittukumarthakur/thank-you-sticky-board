@@ -85,4 +85,27 @@ describe("app", () => {
     });
   });
 
+  describe("POST /notes", () => {
+    it("should should post a note", (_, done) => {
+      const auth = new Authenticate();
+      const board = new Board();
+      const app = createApp(auth, board);
+
+      request(app)
+        .post("/login")
+        .type("application/x-www-form-urlencoded")
+        .send("username=bittu&password=123")
+        .expect("set-cookie", "auth-token=bittu-123; Path=/")
+        .expect(200)
+        .end(() => {
+          request(app)
+            .post("/notes")
+            .set("Cookie", "auth-token=bittu-123")
+            .expect(302)
+            .expect("location", "/")
+            .end(done);
+        });
+    });
+  });
+
 });
