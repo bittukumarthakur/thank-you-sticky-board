@@ -14,6 +14,11 @@ class Authenticate {
     return authToken in this.#userInfo;
   }
 
+  deleteAuthToken(authToken) {
+    const userInfo = Object.entries(this.#userInfo).filter(([token]) => token !== authToken);
+    this.#userInfo = Object.fromEntries(userInfo);
+  }
+
   getUserInfo(authToken) {
     const { username } = this.#userInfo[authToken];
     return username;

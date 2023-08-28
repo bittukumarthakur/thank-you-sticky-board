@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "node --test",
-    "lint": "npx eslint",
+    "lint": "npx eslint .",
     "coverage": "npx nyc node --test"
   },
   "keywords": [],

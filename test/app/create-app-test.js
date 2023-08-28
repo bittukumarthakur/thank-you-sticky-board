@@ -59,5 +59,28 @@ describe("app", () => {
     });
   });
 
+  describe("GET /logout", () => {
+    it("should logout the user", (_, done) => {
+      const auth = new Authenticate();
+      const app = createApp(auth, authUser, parseCookie);
+
+      request(app)
+        .post("/login")
+        .type("application/x-www-form-urlencoded")
+        .send("username=bittu&password=123")
+        .expect("set-cookie", "auth-token=bittu-123; Path=/")
+        .end(() => {
+          request(app)
+            .get("/logout")
+            .set("Cookie", "auth-token=bittu-123")
+            .expect(302)
+            .expect("location", "/")
+            .expect("set-cookie", /Max-Age=0/)
+            .end(done);
+        });
+    });
+  });
+
+
 
 });

@@ -2,8 +2,13 @@ const express = require("express");
 const { logger } = require("../middleware/logger");
 const { login } = require("../handlers/login");
 const { serveLoginPage } = require("../handlers/serve-login-page");
-const Board = require("../models/board");
 const { serveHomepage } = require("../handlers/serve-home-page");
+const { logout } = require("../handlers/logout");
+const { authUser } = require("../middleware/auth-user");
+const { parseCookie } = require("../middleware/parseCookie");
+
+const Board = require("../models/board");
+
 
 const postNote = (request, response) => {
   const { board, auth } = request.app.context;
@@ -16,7 +21,7 @@ const postNote = (request, response) => {
   response.redirect("/");
 };
 
-const createApp = (auth, authUser, parseCookie) => {
+const createApp = (auth) => {
   const app = express();
   const board = new Board();
   app.context = { auth, board };
@@ -27,6 +32,7 @@ const createApp = (auth, authUser, parseCookie) => {
 
   app.get("/login", serveLoginPage);
   app.post("/login", login);
+  app.get("/logout", logout);
   app.get("/", authUser, serveHomepage);
   app.post("/", authUser, postNote);
 

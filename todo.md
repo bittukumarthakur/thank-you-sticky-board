@@ -37,3 +37,9 @@ stickyNotes.remove(username,message);
   note: "thank you for your support and help bittu"
   }
 ]
+
+## notes
+- instead of dialog make a card and give cursor to type there.
+- make the size of note small.
+- add note is two word.
+
