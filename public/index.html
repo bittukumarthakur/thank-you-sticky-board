@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>thank you sticky board</title>
   <link rel="stylesheet" href="/styles/style.css">
   <script src="/scripts/index.js"></script>
 </head>
@@ -12,24 +12,17 @@
 <body>
 
   <header>
-    <h1>Digital thank you sticky board</h1>
-    <button id="addNoteButton">Add Note</button>
+    <div id="logo-section">
+      <h1>Idea Board</h1>
+      <div id="logo-image"></div>
+    </div>
+
     <a href="/logout">Logout</a>
   </header>
 
-
-  <dialog id="add-note-prompt">
-    <form method="post">
-      <div id="text-ares">
-        <p>Thank you note</p>
-        <textarea name="message" cols="28" rows="5" maxlength="100"></textarea>
-      </div>
-
-      <div>
-        <button type="submit" id="post-button">Post</button>
-      </div>
-    </form>
-  </dialog>
+  <div>
+    <button id="add-note-button">➕</button>
+  </div>
 
   <div id="notes">
     --notes

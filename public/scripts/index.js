@@ -26,7 +26,7 @@ const addNote = () => {
 };
 
 const main = () => {
-  const addNoteButton = document.querySelector("#addNoteButton");
+  const addNoteButton = document.querySelector("#add-note-button");
   addNoteButton.onclick = addNote;
 };
 
