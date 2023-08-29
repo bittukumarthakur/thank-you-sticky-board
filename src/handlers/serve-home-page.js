@@ -4,7 +4,7 @@ const createNotesElement = (notesDetails) => {
   return notesDetails.map(({ username, message }) => {
     return `<div class="note">
     <div class="message"><p>${message}</p></div>
-    <h2 class="name">By: ${username}</h2>
+    <h2 class="name">~ ${username}</h2>
     </div>`;
   }).join("\n");
 };

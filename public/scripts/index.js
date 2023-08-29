@@ -18,6 +18,7 @@ const addNote = () => {
   textArea.classList.add("note");
   textArea.setAttribute("maxlength", 75);
   notesContainer.append(textArea);
+  textArea.focus();
 
   textArea.onkeyup = (event) => {
     if (event.key === "Enter") sendNote(textArea);

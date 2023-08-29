@@ -62,7 +62,7 @@ button[type=submit] {
 .name {
   text-align: right;
   padding-right: 1em;
-  background-color: transparent;
+  font-weight: 400;
 }
 
 .message {
