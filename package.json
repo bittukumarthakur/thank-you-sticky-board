@@ -1,6 +1,9 @@
 {
   "name": "thank-you-sticky-board",
   "version": "1.0.0",
+  "engines": {
+    "node": "v20.3.0"
+  },
   "main": "index.js",
   "directories": {
     "test": "test"
