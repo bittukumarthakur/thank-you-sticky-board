@@ -1,7 +1,8 @@
 const authUser = (request, response, next) => {
-  const authToken = request.cookie["auth-token"] ;
+  const { auth } = request.app.context;
+  const authToken = request.cookie["auth-token"];
 
-  if (!authToken) {
+  if (!auth.isValidateAuthToken(authToken)) {
     response.redirect("/login");
     response.send();
     return;

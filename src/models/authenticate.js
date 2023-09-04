@@ -10,7 +10,7 @@ class Authenticate {
     return authToken;
   }
 
-  validateAuthToken(authToken) {
+  isValidateAuthToken(authToken) {
     return authToken in this.#userInfo;
   }
 

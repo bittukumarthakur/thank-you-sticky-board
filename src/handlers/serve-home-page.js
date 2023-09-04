@@ -12,7 +12,7 @@ const createNotesElement = (notesDetails) => {
 const serveHomepage = (request, response) => {
   const { board, auth } = request.app.context;
   const authToken = request.cookie["auth-token"];
-  const username = auth.getUserInfo(authToken);
+  // const username = auth.getUserInfo(authToken);
   const notesDetails = board.getNotes();
   const notesElement = createNotesElement(notesDetails);
 
