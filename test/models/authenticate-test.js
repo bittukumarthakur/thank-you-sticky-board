@@ -13,8 +13,8 @@ describe("auth", () => {
     const auth = new Authenticate();
     const authToken = auth.createAuthToken("bittu", "pass123");
 
-    ok(auth.validateAuthToken(authToken));
-    ok(!auth.validateAuthToken("bittu"));
+    ok(auth.isValidateAuthToken(authToken));
+    ok(!auth.isValidateAuthToken("bittu"));
   });
 
   it("should give the user info", () => {
